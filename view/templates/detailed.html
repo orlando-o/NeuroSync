@@ -29,7 +29,7 @@
           <div id="version">{{ version }}</div>
         </div>
         <div class="versionInformation">
-          {{ model.get_ml_stats(model.get_ml_stats_path()) if
+          {{ render_markdown(model.get_ml_stats(model.get_ml_stats_path())) | safe if
           model.get_ml_stats_path() != "" else "Please upload ML code file." }}
         </div>
       </div>
