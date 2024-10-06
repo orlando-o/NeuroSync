@@ -58,7 +58,7 @@ def upload_file():
     experiment = request.args.get("exp")
     model.set_current_experiment(experiment)
     model.set_current_version(version)
-    return render_template("detailed.html", version=version, experiment=experiment, model=model)
+    return render_template("detailed.html", render_markdown = render_markdown, version=version, experiment=experiment, model=model)
     
 
 def render_markdown(text):
@@ -74,5 +74,6 @@ def addBranch():
     model.set_current_experiment(experiment)
     model.set_current_version(version)
     version = model.add_version(model.get_current_versionID())
-    return render_template("detailed.html", version=version, experiment=experiment, model=model)
+    model.set_current_version(version)
+    return render_template("detailed.html", render_markdown = render_markdown, version=version, experiment=experiment, model=model)
 app.run()

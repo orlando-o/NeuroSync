@@ -106,7 +106,7 @@
 }
 
 .versionContainer {
-  height: 60vh;
+  height: fit-content;
   display: flex;
   margin-top: 2vh;
   flex-direction: row;
@@ -158,4 +158,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.versionInformation {
+  height: fit-content;
 }
