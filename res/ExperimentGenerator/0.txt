@@ -1,38 +1,35 @@
 ## Model Architecture:
 
-The code implements a Generative Adversarial Network (GAN) consisting of a Generator and a Discriminator. Both models are implemented as Multi-Layer Feedforward Neural Networks (MLFN).
+The code implements a Generative Adversarial Network (GAN) consisting of two main components: a Generator and a Discriminator. Both components are Multi-Layer Feedforward Neural Networks (MLFNs).
 
 **Generator:**
 
 * **Structure:**
-    * **Input Layer:** 100 neurons (latent vector).
-    * **Hidden Layers:** 3 hidden layers with 256, 512, and 1024 neurons respectively. All hidden layers use the 'ReLU' activation function.
-    * **Output Layer:**  3 * 64 * 64 neurons (3 for the color channels, 64 for image height, and 64 for image width). The output layer uses the 'Tanh' activation function to output image pixel values in the range [-1, 1].
+    * **Input Layer:** 100 neurons (latent space vector)
+    * **Hidden Layer 1:** 256 neurons with 'ReLU' activation function.
+    * **Hidden Layer 2:** 512 neurons with 'ReLU' activation function.
+    * **Hidden Layer 3:** 1024 neurons with 'ReLU' activation function.
+    * **Output Layer:** 18432 neurons (3 channels * 64 pixels * 64 pixels) representing the generated image with 'Tanh' activation function.
 
 **Discriminator:**
 
 * **Structure:**
-    * **Input Layer:** 12288 neurons (3 * 64 * 64),  representing flattened image data.
-    * **Hidden Layers:** 2 hidden layers with 1024 and 512 neurons respectively. Both hidden layers use the 'LeakyReLU' activation function with a negative slope of 0.2.
-    * **Output Layer:** 1 neuron, using the 'Sigmoid' activation function to output a probability score between 0 and 1, representing the likelihood of the input being a real image.
+    * **Input Layer:** 18432 neurons (3 channels * 64 pixels * 64 pixels) representing the input image.
+    * **Hidden Layer 1:** 1024 neurons with 'LeakyReLU' activation function (slope = 0.2).
+    * **Hidden Layer 2:** 512 neurons with 'LeakyReLU' activation function (slope = 0.2).
+    * **Output Layer:** 1 neuron representing the probability of the input image being real with 'Sigmoid' activation function.
 
 ## Hyperparameters:
 
 The following machine learning hyperparameters are extracted from the code:
 
 * **Batch Size:** 64
-* **Learning Rate:** 0.0002
-* **Number of Epochs:** 50
-* **Latent Vector Size:** 100
-* **Image Size:** 64
-* **Number of Channels:** 3
+* **Learning Rate:** 0.0002 (for both Generator and Discriminator)
+* **Epochs:** 50
+* **Latent Size:** 100 (dimension of the latent space vector)
+* **Image Size:** 64 (resolution of the generated images)
+* **Number of Channels:** 3 (RGB image)
 * **Optimizer:** Adam (for both Generator and Discriminator)
 * **Loss Function:** Binary Cross-Entropy (BCELoss)
-* **Generator Activation Function:** Tanh
-* **Discriminator Activation Function:** LeakyReLU (negative slope 0.2) 
 
-**Note:** 
-* The Adam optimizer is used for both the Generator and Discriminator with a learning rate of 0.0002.
-* The training process involves iterating over the dataset for 50 epochs. 
-* The generator takes a random latent vector of size 100 as input and generates images of size 64x64 with 3 color channels.
-* The discriminator takes images as input and outputs a probability score, indicating the likelihood of the input being a real image.
+**Note:** The code uses a static learning rate for both the Generator and Discriminator. 

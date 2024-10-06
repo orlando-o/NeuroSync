@@ -1,20 +1,21 @@
 ## Model Architecture:
 
-The code implements a Convolutional Autoencoder.
+The code implements a Convolutional Autoencoder (CAE) with two convolutional layers in the encoder and two transposed convolutional layers in the decoder.
 
 **Structure:**
 
 * **Encoder:**
-    * **Conv2d Layer 1:** 1 input channel, 16 output channels, 3x3 kernel, stride 2, padding 1. This layer reduces the input image size from (1, 28, 28) to (16, 14, 14).
-    * **ReLU Activation:** Applies the ReLU activation function to the output of the convolutional layer.
-    * **Conv2d Layer 2:** 16 input channels, 4 output channels, 3x3 kernel, stride 2, padding 1. This layer further reduces the image size from (16, 14, 14) to (4, 7, 7).
-    * **ReLU Activation:** Applies the ReLU activation function to the output of the convolutional layer.
-
+    * **Layer 1:** 2D Convolution with 16 filters, kernel size 3, stride 2, and padding 1.  
+    * **Activation:** ReLU
+    * **Layer 2:** 2D Convolution with 4 filters, kernel size 3, stride 2, and padding 1. 
+    * **Activation:** ReLU
 * **Decoder:**
-    * **ConvTranspose2d Layer 1:** 4 input channels, 16 output channels, 4x4 kernel, stride 2, padding 1. This layer upsamples the image size from (4, 7, 7) to (16, 14, 14).
-    * **ReLU Activation:** Applies the ReLU activation function to the output of the convolutional layer.
-    * **ConvTranspose2d Layer 2:** 16 input channels, 1 output channel, 4x4 kernel, stride 2, padding 1. This layer upsamples the image size from (16, 14, 14) to (1, 28, 28).
-    * **Sigmoid Activation:** Applies the sigmoid activation function to the output of the convolutional layer to ensure output values are between 0 and 1.
+    * **Layer 1:** 2D Transposed Convolution with 16 filters, kernel size 4, stride 2, and padding 1.
+    * **Activation:** ReLU
+    * **Layer 2:** 2D Transposed Convolution with 1 filter, kernel size 4, stride 2, and padding 1.
+    * **Activation:** Sigmoid
+
+**Note:** This architecture assumes the input is a grayscale image with dimensions 28x28. The encoder downsamples the image through the convolutional layers, extracting features. The decoder then upsamples the encoded features back to the original image size using transposed convolutions.
 
 ## Hyperparameters:
 
@@ -25,5 +26,8 @@ The following machine learning hyperparameters are extracted from the code:
 * **Epochs:** 10
 * **Optimizer:** Adam
 * **Loss Function:** Mean Squared Error (MSE) 
-* **Activation Function (Encoder):** ReLU
-* **Activation Function (Decoder):** ReLU (except for the last layer, which uses sigmoid)
+
+**Note:** 
+* The input images are normalized to have pixel values between 0 and 1.
+* The code uses the `cuda()` function, indicating the model is trained on a GPU.
+* The `torch.save()` function saves the trained model's state dictionary to a file named 'conv_autoencoder.pth'. 
