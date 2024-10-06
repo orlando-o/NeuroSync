@@ -46,7 +46,10 @@ class Model:
         self.current_experimentID = name
         if name not in self.get_all_exps():
             self.add_version(None)
-            os.path.mkdir(os.path.join("res", "Experiment" + self.current_experimentID))
+            print(os.path.join("res", "Experiment" + self.current_experimentID))
+            if not os.path.isdir(os.path.join("res", "Experiment" + self.current_experimentID)):
+                os.mkdir(os.path.join("res", "Experiment" + self.current_experimentID))
+
 
     def get_current_experimentID(self):
         return self.current_experimentID
