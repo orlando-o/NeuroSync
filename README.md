@@ -1,4 +1,4 @@
-# NueraSync - the essential tool for AI researchers to effortlessly keep track of complex version histories and statistics.
+# NeuroSync - the essential tool for AI researchers to effortlessly keep track of complex version histories and statistics.
 ### Created during MRUHacks 2024
 
 ## Contributors
