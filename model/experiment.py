@@ -43,10 +43,17 @@ class Model:
     
     def set_current_experiment(self, name):
         self.current_experimentID = name
+        if name not in self.get_all_exps():
+            self.add_version(None)
+
     
     def add_version(self, parent_version):
-        VerID = None
-        StatPath = ""
+        if parent_version == None:
+            VerID = 0
+            StatPath = ""
+        else:
+            VerID = None
+            StatPath = ""
         with open("res/exp_data.csv", "a") as exp_data_file:
             exp_data_writer = csv.DictWriter(exp_data_file, fieldnames=self.fieldnames)
             exp_data_writer.writerow(
