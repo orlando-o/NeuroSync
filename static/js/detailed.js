@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.pathname !== '/detailedView') {
+        // const queryString = window.location.search;
+        var newVersion = document.querySelector("#version");
+        newVersion = newVersion.textContent;
+        var url = new URL(window.location.href);
+        url.searchParams.set('vrs', newVersion);
+        url.pathname = "/detailedView";
+        console.log(url);
+        window.location.href = url;
+    }
     var homeButton = document.querySelector(".homeButton")
     homeButton.addEventListener("click", returnHome)
     var branch = document.querySelector(".branch");
