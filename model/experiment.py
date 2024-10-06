@@ -51,7 +51,7 @@ class Model:
 
     def add_version(self, parent_version):
         if parent_version == None:
-            VerID = 0
+            VerID = "0"
         else:
             VerID = None
         with open("res/exp_data.csv", "a") as exp_data_file:
