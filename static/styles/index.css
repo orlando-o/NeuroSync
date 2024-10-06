@@ -134,6 +134,15 @@
   align-items: flex-end;
 }
 
+.versionHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+#version {
+  margin-left: 5px;
+}
+
 .versionHeader,
 .versionInformation {
   margin-top: 1vh;
