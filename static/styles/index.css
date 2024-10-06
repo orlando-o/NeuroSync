@@ -62,8 +62,35 @@
   transform: translate3d(2px, 2px, 2px);
 }
 
-.addExperiment:active {
+.addExperiment:active,
+.exitButton:active {
   transform: translate3d(1px, 1px, 1px);
+}
+
+.popUp {
+  position: fixed;
+  width: 40vw;
+  height: 20vh;
+  padding: 0.7vw;
+  top: 40%;
+  left: 30%;
+  box-shadow: 0 0 15px var(--headerColour);
+  border-radius: 10px;
+  background-color: var(--headerColour);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 2.5vh;
+}
+
+.screenCover {
+  visibility: hidden;
+  width: 200%;
+  height: 200%;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .version {

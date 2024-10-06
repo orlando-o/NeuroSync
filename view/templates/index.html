@@ -18,6 +18,7 @@
       <div>
         <div class="headerText">NeuroSync</div>
         <div class="line">|</div>
+        <div>Home</div>
       </div>
       <div class="addExperiment">New</div>
     </div>
@@ -26,12 +27,14 @@
       <div class="experiment">{{ experiment }}</div>
       {% endfor %}
     </div>
-
-    <div class="popUp">
-      <div class="exitButton">X</div>
-      <div>
-        <label for="nameWindow">Enter Experiment Name</label>
-        <input type="search" id="nameWindow" name="nameWindow" />
+    <div class="screenCover">
+      <div class="popUp">
+        <div class="exitButton">X</div>
+        <div>
+          <label for="nameWindow">Enter Experiment Name</label>
+          <input type="search" id="nameWindow" name="nameWindow" />
+        </div>
+        <button type="submit" class="complete">Complete</button>
       </div>
     </div>
   </body>

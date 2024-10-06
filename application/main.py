@@ -10,14 +10,23 @@ model = Model()
 model.set_current_experiment("Schrodinger's Car"),
 model.set_current_experiment("Schrodinger's Truck"),
 model.set_current_experiment("Schrodinger's Van")
-experiments = model.get_all_exps()
+experiments = None
 
 @app.route("/")
 def index():
+    experiments = model.get_all_exps()
+    return render_template("index.html", experiments=experiments)
+
+@app.route("/addExperiment")
+def add_experiment():
+    newExperiment = request.args.get("name")
+    model.set_current_experiment(newExperiment)
+    experiments = model.get_all_exps()
     return render_template("index.html", experiments=experiments)
 
 @app.route("/experimentView")
 def experiment_view():
+    experiments = model.get_all_exps()
     experimentID = request.args.get("exp") # gets querystring ie: /experimentView?exp=EXPERIMENT-ID
     experiment = None
     for exp in experiments:

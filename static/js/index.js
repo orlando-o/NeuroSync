@@ -1,21 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var addExperiment = document.querySelector(".addExperiment");
+    var addButton = document.querySelector(".addExperiment");
+    addButton.addEventListener("click", openPopUp);
+    var exitButton = document.querySelector(".exitButton");
+    exitButton.addEventListener("click", closePopUp);
+    var complete = document.querySelector(".complete");
+    complete.addEventListener("click", addExperiment);
     var experiments = document.querySelectorAll(".experiment");
     experiments.forEach(exp => {
         exp.addEventListener("click", displayExperiment);
     });
-    addExperiment.addEventListener("click", addExperiment);
     
 });
 
 function addExperiment(){
-    var popUp = document.createElement("div");
-    var exitButton = document.createElement("div");
-    var prompt = document.createElement("div");
-    var nameWindow = document.createElement("")
+    var name = document.querySelector("#nameWindow").value;
+    window.location.href = "./addExperiment?name=" + name;
+    closePopUp();
+}
 
-    exitButton.append("X");
-    prompt.append("Enter Experiment Name:")
+function closePopUp(){
+    var screenCover = document.querySelector(".screenCover");
+    screenCover.style.visibility = "hidden";
+}
+
+function openPopUp(){
+    var screenCover = document.querySelector(".screenCover");
+    screenCover.style.visibility = "visible";
+
 }
 
 function displayExperiment(event) {
