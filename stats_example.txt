@@ -27,7 +27,7 @@ Here are the machine learning hyperparameters extracted from the provided code, 
 * The code uses a Multilayer Feedforward Network with 1 hidden layer and a hyperbolic tangent activation function for the prediction of displacement.
 * The learning rate is dynamically adjusted based on the loss trend to optimize the training process.
 * The code uses a standard Mean Squared Error (MSE) loss function to measure the difference between the predicted and actual displacement values.
-* The training runs for 100,000 epochs, which is a significant amount of training time, suggesting a need for an efficient architecture or the use of a GPU for faster training.
+* The training runs for 100,000 epochs, which is a significant amount of training time, suggesting a need for a more efficient architecture or the use of a GPU for faster training.
 
 **Note:**
 
