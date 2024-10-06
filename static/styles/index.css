@@ -104,3 +104,49 @@
   margin-left: 1vh;
   margin-right: 1vh;
 }
+
+.versionContainer {
+  height: 60vh;
+  display: flex;
+  margin-top: 2vh;
+  flex-direction: row;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  font-size: 3vh;
+}
+
+.versionContent {
+  background-color: var(--itemColour);
+  display: flex;
+  border-radius: 1vh;
+  box-shadow: 0 0 15px #ffffff;
+  font-size: 2vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.versionButtons {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.versionHeader,
+.versionInformation {
+  margin-top: 1vh;
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+}
+
+.branch,
+.upload {
+  margin-bottom: 2vh;
+  width: 10vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

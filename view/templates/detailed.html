@@ -24,7 +24,7 @@
     </div>
     <div class="versionContainer">
       <div class="versionContent">
-        <div class="versionHeader">{{ version }}</div>
+        <div class="versionHeader">Version: {{ version }}</div>
         <div class="versionInformation">
           {{ model.get_ml_stats_path() if model.get_ml_stats_path() != "" else
           "Please upload ML code file." }}
