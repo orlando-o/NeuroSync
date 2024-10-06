@@ -19,11 +19,12 @@ def index():
 @app.route("/experimentView")
 def experiment_view():
     experimentID = request.args.get("exp") # gets querystring ie: /experimentView?exp=EXPERIMENT-ID
-    experiment = []
+    experiment = None
     for exp in experiments:
         if exp == experimentID:
             experiment = exp
     model.set_current_experiment(experiment)
+    print(experiment)
     versions = model.get_versions()
     return render_template("semiDetailed.html", experiment=model.get_current_experimentID, versions=versions)
 
