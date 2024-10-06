@@ -83,4 +83,4 @@ class Model:
                 if row["ExpID"] == self.current_experimentID:
                     versions.append(row["VerID"])
             
-            return versions #
+            return versions
