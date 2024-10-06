@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       type="module"
-      src="{{ url_for('static', filename='js/helperFunctions.js') }}"
+      src="{{ url_for('static', filename='js/index.js') }}"
     ></script>
     <link
       rel="stylesheet"
@@ -25,6 +25,14 @@
       {% for experiment in experiments %}
       <div class="experiment">{{ experiment }}</div>
       {% endfor %}
+    </div>
+
+    <div class="popUp">
+      <div class="exitButton">X</div>
+      <div>
+        <label for="nameWindow">Enter Experiment Name</label>
+        <input type="search" id="nameWindow" name="nameWindow" />
+      </div>
     </div>
   </body>
 </html>

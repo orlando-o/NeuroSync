@@ -26,6 +26,6 @@ def experiment_view():
     model.set_current_experiment(experiment)
     print(experiment)
     versions = model.get_versions()
-    return render_template("semiDetailed.html", experiment=model.get_current_experimentID, versions=versions)
+    return render_template("semiDetailed.html", experiment=model.get_current_experimentID(), versions=versions)
 
 app.run()

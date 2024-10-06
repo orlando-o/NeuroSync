@@ -24,8 +24,17 @@
 }
 
 .header > div {
+  margin: 1vh 0 0 2vh;
   display: flex;
   flex-direction: row;
+}
+
+.addExperiment {
+  transform: translateX(-2vh) translateY(-0.5vh);
+  background-color: var(--itemColour);
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vh;
 }
 
 .experimentContainer {
@@ -34,7 +43,8 @@
   justify-content: space-around;
 }
 
-.experiment {
+.experiment,
+.version {
   height: 25vh;
   width: 25vh;
   background-color: var(--itemColour);
@@ -44,4 +54,20 @@
   border-radius: 1vh;
   box-shadow: 0 0 15px #ffffff;
   font-size: 2vh;
+}
+
+.experiment:active,
+.version:active {
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  transform: translate3d(2px, 2px, 2px);
+}
+
+.addExperiment:active {
+  transform: translate3d(1px, 1px, 1px);
+}
+
+.version {
+  border-radius: 25vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
 }
