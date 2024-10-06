@@ -116,6 +116,19 @@
   font-size: 3vh;
 }
 
+.uploadForm {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#fileUpload,
+#uploadButton,
+.complete {
+  font-size: 2vh;
+}
+
 .versionContent {
   background-color: var(--itemColour);
   display: flex;

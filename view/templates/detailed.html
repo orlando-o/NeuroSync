@@ -29,8 +29,9 @@
           <div id="version">{{ version }}</div>
         </div>
         <div class="versionInformation">
-          {{ render_markdown(model.get_ml_stats(model.get_ml_stats_path())) | safe if
-          model.get_ml_stats_path() != "" else "Please upload ML code file." }}
+          {{ render_markdown(model.get_ml_stats(model.get_ml_stats_path())) |
+          safe if model.get_ml_stats_path() != "" else "Please upload ML code
+          file." }}
         </div>
       </div>
       <div class="versionButtons">
@@ -42,7 +43,7 @@
       <div class="popUp">
         <div class="exitButton">X</div>
         <div>
-          <form method="post" enctype="multipart/form-data">
+          <form class="uploadForm" method="post" enctype="multipart/form-data">
             <label for="fileUpload">Upload ML code file:</label>
             <input type="file" id="fileUpload" name="fileUpload" />
             <button type="submit" id="uploadButton">Upload</button>

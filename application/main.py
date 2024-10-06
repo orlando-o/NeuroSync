@@ -8,9 +8,6 @@ import markdown
 app = Flask(__name__, template_folder="../view/templates")
 app.static_folder = "../static"
 model = Model()
-model.set_current_experiment("SchrodingersCar"),
-model.set_current_experiment("SchrodingersTruck"),
-model.set_current_experiment("SchrodingersVan")
 experiments = None
 
 @app.route("/")
