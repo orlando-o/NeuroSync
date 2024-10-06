@@ -45,13 +45,26 @@ def detailedView():
     model.set_current_version(version)
     return render_template("detailed.html", version=version, experiment=experiment, model=model)
 
+@app.route("/detailedView", methods=["POST"])
+def upload_file():
+    if request.files["fileUpload"]:
+        file = request.files['fileUpload']
+        upload_dir = '.\\res\\uploadedFiles'
+        file.save(os.path.join(upload_dir, file.filename))
+        model.generate_ml_stats(os.path.join(upload_dir, file.filename))
+    version = request.args.get("vrs")
+    experiment = request.args.get("exp")
+    model.set_current_experiment(experiment)
+    model.set_current_version(version)
+    return render_template("detailed.html", version=version, experiment=experiment, model=model)
+    
+
 @app.route("/addBranch")
 def addBranch():
     version = request.args.get("vrs")
     experiment = request.args.get("exp")
     model.set_current_experiment(experiment)
     model.set_current_version(version)
-    model.add_version(model.get_current_versionID())
-    version = model.get_current_versionID()
+    version = model.add_version(model.get_current_versionID())
     return render_template("detailed.html", version=version, experiment=experiment, model=model)
 app.run()
