@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="{{ url_for('static', filename='js/semiDetailed.js') }}"
+    ></script>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/index.css') }}"
@@ -14,9 +18,9 @@
       <div>
         <div class="headerText">NeuroSync</div>
         <div class="line">|</div>
+        <div class="experimentName">{{ experiment }}</div>
       </div>
-      <div class="experimentName">{{ experiment }}</div>
-      <div class="addExperiment">New</div>
+      <div class="addVersion">Branch</div>
     </div>
     <div class="versionContainer">
       {% for version in versions %}

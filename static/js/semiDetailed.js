@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const experiments = document.querySelectorAll(".experiment");
+    
+    var experiments = document.querySelectorAll(".version");
     experiments.forEach(exp => {
         exp.addEventListener("click", displayVersion);
     });
+    
 });
 
 function displayVersion(event) {
-    var experiment = event.target.textContent;
-    window.location.href = "./experimentView?exp=" + experiment;
+    var version = event.target.textContent;
+    window.location.href = "./detailedView?exp=" + version;
 }
