@@ -29,7 +29,10 @@
   flex-direction: row;
 }
 
-.addExperiment {
+.addExperiment,
+.homeButton,
+.branch,
+.upload {
   transform: translateX(-2vh) translateY(-0.5vh);
   background-color: var(--itemColour);
   justify-content: center;
@@ -57,7 +60,10 @@
 }
 
 .experiment:active,
-.version:active {
+.version:active,
+.homeButton:active,
+.branch:active,
+.upload:active {
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
   transform: translate3d(2px, 2px, 2px);
 }

@@ -37,4 +37,12 @@ def experiment_view():
     versions = model.get_versions()
     return render_template("semiDetailed.html", experiment=model.get_current_experimentID(), versions=versions)
 
+@app.route("/detailedView")
+def detailedView():
+    version = request.args.get("vrs")
+    experiment = request.args.get("exp")
+    model.set_current_experiment(experiment)
+    model.set_current_version(version)
+    return render_template("detailed.html", version=version, experiment=experiment, model=model)
+
 app.run()

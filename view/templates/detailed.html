@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       type="module"
-      src="{{ url_for('static', filename='js/semiDetailed.js') }}"
+      src="{{ url_for('static', filename='js/detailed.js') }}"
     ></script>
     <link
       rel="stylesheet"
@@ -23,9 +23,17 @@
       <div class="homeButton">Home</div>
     </div>
     <div class="versionContainer">
-      {% for version in versions %}
-      <div class="version">{{ version }}</div>
-      {% endfor %}
+      <div class="versionContent">
+        <div class="versionHeader">{{ version }}</div>
+        <div class="versionInformation">
+          {{ model.get_ml_stats_path() if model.get_ml_stats_path() != "" else
+          "Please upload ML code file." }}
+        </div>
+      </div>
+      <div class="versionButtons">
+        <div class="branch">Branch</div>
+        <div class="upload">Upload</div>
+      </div>
     </div>
   </body>
 </html>
