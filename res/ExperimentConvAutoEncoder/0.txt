@@ -1,0 +1,29 @@
+## Model Architecture:
+
+The code implements a Convolutional Autoencoder.
+
+**Structure:**
+
+* **Encoder:**
+    * **Conv2d Layer 1:** 1 input channel, 16 output channels, 3x3 kernel, stride 2, padding 1. This layer reduces the input image size from (1, 28, 28) to (16, 14, 14).
+    * **ReLU Activation:** Applies the ReLU activation function to the output of the convolutional layer.
+    * **Conv2d Layer 2:** 16 input channels, 4 output channels, 3x3 kernel, stride 2, padding 1. This layer further reduces the image size from (16, 14, 14) to (4, 7, 7).
+    * **ReLU Activation:** Applies the ReLU activation function to the output of the convolutional layer.
+
+* **Decoder:**
+    * **ConvTranspose2d Layer 1:** 4 input channels, 16 output channels, 4x4 kernel, stride 2, padding 1. This layer upsamples the image size from (4, 7, 7) to (16, 14, 14).
+    * **ReLU Activation:** Applies the ReLU activation function to the output of the convolutional layer.
+    * **ConvTranspose2d Layer 2:** 16 input channels, 1 output channel, 4x4 kernel, stride 2, padding 1. This layer upsamples the image size from (16, 14, 14) to (1, 28, 28).
+    * **Sigmoid Activation:** Applies the sigmoid activation function to the output of the convolutional layer to ensure output values are between 0 and 1.
+
+## Hyperparameters:
+
+The following machine learning hyperparameters are extracted from the code:
+
+* **Batch Size:** 64
+* **Learning Rate:** 1e-3
+* **Epochs:** 10
+* **Optimizer:** Adam
+* **Loss Function:** Mean Squared Error (MSE) 
+* **Activation Function (Encoder):** ReLU
+* **Activation Function (Decoder):** ReLU (except for the last layer, which uses sigmoid)

@@ -1,0 +1,21 @@
+## Model Architecture:
+
+The code implements a Multi-Layer Feedforward Neural Network (MLFN) with one hidden layer. 
+
+**Structure:**
+
+* **Input Layer:** 784 neurons (28x28 pixels of the MNIST image)
+* **Hidden Layer:** 128 neurons with the 'ReLU' activation function.
+* **Output Layer:** 10 neurons (representing the 10 digits) with the 'Softmax' activation function.
+
+## Hyperparameters:
+
+The following machine learning hyperparameters are extracted from the code:
+
+* **Epochs:** 5
+* **Batch Size:** 64
+* **Learning Rate:** 0.001
+* **Optimizer:** Adam
+* **Loss Function:** Cross-Entropy Loss
+
+**Note:** This code uses the Adam optimizer, which is a more advanced optimizer than SGD. Adam combines the benefits of both momentum and RMSProp and adapts the learning rate for each parameter. 
