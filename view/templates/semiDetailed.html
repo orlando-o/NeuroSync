@@ -15,12 +15,12 @@
         <div class="headerText">NeuroSync</div>
         <div class="line">|</div>
       </div>
-      <div class="experimentName">{{ experiment.get_name() }}</div>
+      <div class="experimentName">{{ experiment }}</div>
       <div class="addExperiment">New</div>
     </div>
     <div class="versionContainer">
       {% for version in versions %}
-      <div class="version">{{ version.name }}</div>
+      <div class="version">{{ version }}</div>
       {% endfor %}
     </div>
   </body>

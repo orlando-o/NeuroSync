@@ -21,9 +21,10 @@ def experiment_view():
     experimentID = request.args.get("exp") # gets querystring ie: /experimentView?exp=EXPERIMENT-ID
     experiment = []
     for exp in experiments:
-        if exp.get_current_experimentID() == experimentID:
+        if exp == experimentID:
             experiment = exp
-    versions = experiment.get_versions()
-    return render_template("semiDetailed.html", experiment=experiment, versions=versions)
+    model.set_current_experiment(experiment)
+    versions = model.get_versions()
+    return render_template("semiDetailed.html", experiment=model.get_current_experimentID, versions=versions)
 
 app.run()
