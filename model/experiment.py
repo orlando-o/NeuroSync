@@ -46,14 +46,14 @@ class Model:
         if name not in self.get_all_exps():
             self.add_version(None)
 
-    
+    def get_current_experimentID(self):
+        return self.current_experimentID
+
     def add_version(self, parent_version):
         if parent_version == None:
             VerID = 0
-            StatPath = ""
         else:
             VerID = None
-            StatPath = ""
         with open("res/exp_data.csv", "a") as exp_data_file:
             exp_data_writer = csv.DictWriter(exp_data_file, fieldnames=self.fieldnames)
             exp_data_writer.writerow(
