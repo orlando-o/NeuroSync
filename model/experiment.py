@@ -76,6 +76,8 @@ class Model:
             exp_data_writer.writerow(
                 {"ExpID": self.current_experimentID, "VerID": VerID, "StatPath": ""}
             )
+        
+        return VerID
     
     def get_child_versions(self, parent_node):
         children_verIDs = []
