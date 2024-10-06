@@ -1,0 +1,47 @@
+:root {
+  --background: #1c1c1c;
+  --headerColour: #565656;
+  --itemColour: #56565686;
+  --textColour: #fafafa;
+  font-family: "Anton", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  color: var(--textColour);
+  background-color: var(--background);
+}
+
+.header {
+  font-size: 6vh;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  background-color: var(--headerColour);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 4vh;
+  box-shadow: 0 10px 5px #3f3f3f;
+  border-radius: 0.25vh;
+}
+
+.header > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.experimentContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.experiment {
+  height: 25vh;
+  width: 25vh;
+  background-color: var(--itemColour);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vh;
+  box-shadow: 0 0 15px #ffffff;
+  font-size: 2vh;
+}

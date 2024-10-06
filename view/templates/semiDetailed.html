@@ -3,10 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      type="module"
-      src="{{ url_for('static', filename='js/helperFunctions.js') }}"
-    ></script>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/index.css') }}"
@@ -19,11 +15,12 @@
         <div class="headerText">NeuroSync</div>
         <div class="line">|</div>
       </div>
+      <div class="experimentName">{{ experiment.get_name() }}</div>
       <div class="addExperiment">New</div>
     </div>
-    <div class="experimentContainer">
-      {% for experiment in experiments %}
-      <div class="experiment">{{ experiment.name }}</div>
+    <div class="versionContainer">
+      {% for version in versions %}
+      <div class="version">{{ version.name }}</div>
       {% endfor %}
     </div>
   </body>
