@@ -29,8 +29,8 @@
           <div id="version">{{ version }}</div>
         </div>
         <div class="versionInformation">
-          {{ model.get_ml_stats_path() if model.get_ml_stats_path() != "" else
-          "Please upload ML code file." }}
+          {{ model.get_ml_stats() if model.get_ml_stats() != "" else "Please
+          upload ML code file." }}
         </div>
       </div>
       <div class="versionButtons">
