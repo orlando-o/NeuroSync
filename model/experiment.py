@@ -1,7 +1,7 @@
 import csv
 import google.generativeai as genai
 import os
-from gemini_api import gemini_api_key
+from model.gemini_api import gemini_api_key
     
 hyperparameter_prompt = """
                         Give a general description of the model architecture used in this code (i.e. is the model architecure a neural network with n hidden layers, a CNN with x layers and feature maps, etc.),
@@ -57,7 +57,7 @@ class Model:
         with open("res/exp_data.csv", "a") as exp_data_file:
             exp_data_writer = csv.DictWriter(exp_data_file, fieldnames=self.fieldnames)
             exp_data_writer.writerow(
-                {"ExpID": self.current_experiment, "VerID": VerID, "StatPath": ""}
+                {"ExpID": self.current_experimentID, "VerID": VerID, "StatPath": ""}
             )
     
     def add_stats_to_version(self, ml_file_path, VerID):
