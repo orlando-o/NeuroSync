@@ -5,19 +5,27 @@ document.addEventListener("DOMContentLoaded", function() {
     experiments.forEach(exp => {
         exp.addEventListener("click", displayVersion);
     });
-    
+    formatVersionNumbers(document.querySelectorAll(".version"));
 });
 
 function returnHome(){
     window.location.href = "./";
 }
 
-// function displayVersion(event) {
-//     var version = event.target.textContent;
-//     window.location.href = "./detailedView?vrs=" + version + "exp=" + document.querySelector("experiment").textContent;
-// }
+
+function formatVersionNumbers(versions){
+    versions.forEach(version => removeLeadingZero(version));
+
+}
+
+function removeLeadingZero(version){
+    if (version.textContent.length > 1) {
+        version.textContent = version.textContent.substring(2);
+    }
+}
+
 function displayVersion(event) {
     var version = event.target.textContent;
     var experiment = document.querySelector(".experimentName");
-    window.location.href = "./detailedView?vrs=" + version + "&exp=" + experiment.textContent;
+    window.location.href = (version == "0" ? "./detailedView?vrs=" : "./detailedView?vrs=0.") + version + "&exp=" + experiment.textContent;
 }
