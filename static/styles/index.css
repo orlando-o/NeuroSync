@@ -111,6 +111,11 @@
   margin-right: 1vh;
 }
 
+.experimentName,
+.line {
+  margin-left: 1vw;
+}
+
 .versionContainer {
   margin: auto;
   height: fit-content;

@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(url);
         window.location.href = url;
     }
-    var homeButton = document.querySelector(".homeButton")
-    homeButton.addEventListener("click", returnHome)
+    var homeButton = document.querySelector(".homeButton");
+    homeButton.addEventListener("click", returnHome);
+    var experimentName = document.querySelector(".experimentName");
+    experimentName.addEventListener("click", returnToExperiment);
     var branch = document.querySelector(".branch");
     branch.addEventListener("click", createBranch);
     var submitButton = document.querySelector(".upload");
@@ -22,8 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function uploadFile(){
-    
-
     closePopUp()
 }
 
@@ -46,4 +46,9 @@ function createBranch(){
 
 function returnHome(){
     window.location.href = "./";
+}
+
+function returnToExperiment(){
+    var experimentName = document.querySelector(".experimentName");
+    window.location.href = "/experimentView?exp=" + experimentName.textContent;
 }
