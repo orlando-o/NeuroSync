@@ -8,6 +8,10 @@
       src="{{ url_for('static', filename='js/semiDetailed.js') }}"
     ></script>
     <link
+      href="https://unpkg.com/treeflex/dist/css/treeflex.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/index.css') }}"
     />
@@ -22,10 +26,6 @@
       </div>
       <div class="homeButton">Home</div>
     </div>
-    <div class="versionContainer">
-      {% for version in versions %}
-      <div class="version">{{ version }}</div>
-      {% endfor %}
-    </div>
+    <div class="tf-tree tf-custom versionContainer">{{ versions | safe }}</div>
   </body>
 </html>

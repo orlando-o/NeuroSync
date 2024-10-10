@@ -27,5 +27,5 @@ function removeLeadingZero(version){
 function displayVersion(event) {
     var version = event.target.textContent;
     var experiment = document.querySelector(".experimentName");
-    window.location.href = (version == "0" ? "./detailedView?vrs=" : "./detailedView?vrs=0.") + version + "&exp=" + experiment.textContent;
+    window.location.href = "./detailedView?vrs=" + version + "&exp=" + experiment.textContent;
 }
